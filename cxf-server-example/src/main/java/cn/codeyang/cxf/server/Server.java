@@ -16,6 +16,5 @@ public class Server {
         factoryBean.getInInterceptors().add(new LoggingInInterceptor());
         factoryBean.getOutInterceptors().add(new LoggingOutInterceptor());
         factoryBean.create();
-
     }
 }
