@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+       <jaxws:server address="/mobile" serviceClass="cn.codeyang.service.MobileService">
+              <jaxws:serviceBean>
+                     <ref bean="mobileService"/>
+              </jaxws:serviceBean>
+       </jaxws:server>
+
+       <bean id="mobileService" class="cn.codeyang.service.MobileServiceImpl">
+              <property name="mobileClient" ref="webClient"/>
+       </bean>
+
+       <jaxws:client id="webClient" address="http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx" serviceClass="cn.codeyang.mobile.server.MobileCodeWSSoap"/>
+</beans>

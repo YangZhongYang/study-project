@@ -1,0 +1,9 @@
+# Spring整合CXF发布REST服务
+* 开发步骤
+    * 创建web项目
+    * 创建POJO类
+    * 创建SEI接口
+    * 创建SEI实现类
+    * 配置Spring配置文件
+    * 配置web.xml
+    * 部署
